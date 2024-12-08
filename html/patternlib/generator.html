@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.3">
+<title>patternlib.generator API documentation</title>
+<meta name="description" content="Wrap the generator to allow pattern matching …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>patternlib.generator</code></h1>
+</header>
+<section id="section-intro">
+<p>Wrap the generator to allow pattern matching.</p>
+<p>Consider an iterator (generator with no return value).</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; generator = iter((1, 2))
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; match matcher(generator):
+...     case Node(0, Node(1, Empty())):
+...         print(&quot;Try to match the whole sequence&quot;)
+...     case Node(1, rest):
+...         print(&quot;Starts with 1 then&quot;, list(rest))
+Starts with 1 then [2]
+</code></pre>
+<p>A more advanced use case is for <code>contextmanager</code>-like generators,
+where the number of yields is known ahead of time.</p>
+<p>The following example a generator with 2 yields and a return statement:</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; def wrapper():
+...     yield &quot;object_1&quot;
+...     yield &quot;object_2&quot;
+...     return &quot;result&quot;
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; match matcher(wrapper()):
+...     case Node(obj1, Node(obj2, Empty(result))):
+...         print(obj1, obj2, result)
+object_1 object_2 result
+</code></pre>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="patternlib.generator.matcher"><code class="name flex">
+<span>def <span class="ident">matcher</span></span>(<span>gen: Generator[T, None, R]) ‑> <a title="patternlib.generator.Node" href="#patternlib.generator.Node">Node</a>[~T, ~R] | <a title="patternlib.generator.Empty" href="#patternlib.generator.Empty">Empty</a>[~T, ~R]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Wrap the generator to inspect the head elements.</p>
+<p>Whilst the original generator will be partially consumed
+the wrapped generator will preserve the inspected elements.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; from itertools import count
+&gt;&gt;&gt; match matcher(count()):
+...     case Node(1, Node(1, _)):
+...         print(&quot;Starts with two 1s&quot;)
+...     case Node(0, Node(1, _)):
+...         print(&quot;Starts with a 0 and a 1&quot;)
+Starts with a 0 and a 1
+</code></pre></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="patternlib.generator.Empty"><code class="flex name class">
+<span>class <span class="ident">Empty</span></span>
+<span>(</span><span>value: R)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The end of the generator.</p>
+<p><code>value</code> stores the return value of the generator.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass(frozen=True)
+class Empty(Generic[T, R]):
+    &#34;&#34;&#34;The end of the generator.
+
+    `value` stores the return value of the generator.
+    &#34;&#34;&#34;
+
+    value: R
+
+    def __iter__(self) -&gt; Iterator[T]:
+        &#34;&#34;&#34;Generate the same contents as the original generator.
+
+        in this cases the generator ends with original return value.
+        &#34;&#34;&#34;
+        yield from ()
+        return self.value</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>typing.Generic</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="patternlib.generator.Empty.value"><code class="name">var <span class="ident">value</span> : ~R</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="patternlib.generator.Node"><code class="flex name class">
+<span>class <span class="ident">Node</span></span>
+<span>(</span><span>value: T, gen: Generator[T, None, R])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An element at the front of the generator.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class Node(Generic[T, R]):
+    &#34;&#34;&#34;An element at the front of the generator.&#34;&#34;&#34;
+
+    value: T
+    gen: Generator[T, None, R]
+    _cached: Node[T, R] | Empty[T, R] | None = field(init=False, default=None)
+
+    __match_args__ = (&#34;value&#34;, &#34;next&#34;)
+
+    def __iter__(self) -&gt; Generator[T, None, R]:
+        &#34;&#34;&#34;Generate the same contents as the original generator.
+
+        This is a destructive iteration, meaning you cannot iterate again.
+        &#34;&#34;&#34;
+        yield self.value
+        if self._cached:
+            yield from self._cached
+        else:
+            yield from self.gen
+
+    @property
+    def next(self) -&gt; Node[T, R] | Empty[T, R]:
+        &#34;&#34;&#34;Get the next node in the generator.&#34;&#34;&#34;
+        if not self._cached:
+            self._cached = matcher(self.gen)
+        return self._cached</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>typing.Generic</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="patternlib.generator.Node.gen"><code class="name">var <span class="ident">gen</span> : Generator[~T, None, ~R]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="patternlib.generator.Node.value"><code class="name">var <span class="ident">value</span> : ~T</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="patternlib.generator.Node.next"><code class="name">prop <span class="ident">next</span> : <a title="patternlib.generator.Node" href="#patternlib.generator.Node">Node</a>[T, R] | <a title="patternlib.generator.Empty" href="#patternlib.generator.Empty">Empty</a>[T, R]</code></dt>
+<dd>
+<div class="desc"><p>Get the next node in the generator.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def next(self) -&gt; Node[T, R] | Empty[T, R]:
+    &#34;&#34;&#34;Get the next node in the generator.&#34;&#34;&#34;
+    if not self._cached:
+        self._cached = matcher(self.gen)
+    return self._cached</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="patternlib" href="index.html">patternlib</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="patternlib.generator.matcher" href="#patternlib.generator.matcher">matcher</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="patternlib.generator.Empty" href="#patternlib.generator.Empty">Empty</a></code></h4>
+<ul class="">
+<li><code><a title="patternlib.generator.Empty.value" href="#patternlib.generator.Empty.value">value</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="patternlib.generator.Node" href="#patternlib.generator.Node">Node</a></code></h4>
+<ul class="">
+<li><code><a title="patternlib.generator.Node.gen" href="#patternlib.generator.Node.gen">gen</a></code></li>
+<li><code><a title="patternlib.generator.Node.next" href="#patternlib.generator.Node.next">next</a></code></li>
+<li><code><a title="patternlib.generator.Node.value" href="#patternlib.generator.Node.value">value</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.3</a>.</p>
+</footer>
+</body>
+</html>
