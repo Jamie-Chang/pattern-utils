@@ -5,7 +5,7 @@ generators, allowing peeking into the head elements of a generator.
 
 Example::
 ```python
->>> from patternlib import generator as gen
+>>> from pattern_utils import generator as gen
 
 >>> def example_generator():
 ...     yield "some resource"

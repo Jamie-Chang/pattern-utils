@@ -1,5 +1,5 @@
-# patternlib
-Pattern matching helpers.
+# Pattern Utils
+Pattern matching utilities.
 
 Currently the only implemented matcher is for generators/iterators.
 

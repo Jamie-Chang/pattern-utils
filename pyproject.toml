@@ -3,11 +3,11 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "patternlib"
+name = "pattern_utils"
 version = "0.1.0"
 authors = [{ name = 'Jamie Chang', email = 'jamie.cheng.chang@gmail.com' }]
 maintainers = [{ name = 'Jamie Chang', email = 'jamie.cheng.chang@gmail.com' }]
-description = "Pattern matching helpers."
+description = "Pattern matching utilities."
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.10"
@@ -22,7 +22,7 @@ classifiers = [
 ]
 
 [project.urls]
-HomePage = "https://github.com/Jamie-Chang/patternlib"
+HomePage = "https://github.com/Jamie-Chang/pattern-utils"
 
 [dependency-groups]
 dev = ['pytest', 'pytest-cov']
