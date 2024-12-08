@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.3">
-<title>patternlib.generator API documentation</title>
+<title>pattern_utils.generator API documentation</title>
 <meta name="description" content="Wrap the generator to allow pattern matching …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
@@ -22,7 +22,7 @@ hljs.highlightAll();
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>patternlib.generator</code></h1>
+<h1 class="title">Module <code>pattern_utils.generator</code></h1>
 </header>
 <section id="section-intro">
 <p>Wrap the generator to allow pattern matching.</p>
@@ -57,8 +57,8 @@ object_1 object_2 result
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="patternlib.generator.matcher"><code class="name flex">
-<span>def <span class="ident">matcher</span></span>(<span>gen: Generator[T, None, R]) ‑> <a title="patternlib.generator.Node" href="#patternlib.generator.Node">Node</a>[~T, ~R] | <a title="patternlib.generator.Empty" href="#patternlib.generator.Empty">Empty</a>[~T, ~R]</span>
+<dt id="pattern_utils.generator.matcher"><code class="name flex">
+<span>def <span class="ident">matcher</span></span>(<span>gen: Generator[T, None, R]) ‑> <a title="pattern_utils.generator.Node" href="#pattern_utils.generator.Node">Node</a>[~T, ~R] | <a title="pattern_utils.generator.Empty" href="#pattern_utils.generator.Empty">Empty</a>[~T, ~R]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Wrap the generator to inspect the head elements.</p>
@@ -78,7 +78,7 @@ Starts with a 0 and a 1
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="patternlib.generator.Empty"><code class="flex name class">
+<dt id="pattern_utils.generator.Empty"><code class="flex name class">
 <span>class <span class="ident">Empty</span></span>
 <span>(</span><span>value: R)</span>
 </code></dt>
@@ -112,13 +112,13 @@ class Empty(Generic[T, R]):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="patternlib.generator.Empty.value"><code class="name">var <span class="ident">value</span> : ~R</code></dt>
+<dt id="pattern_utils.generator.Empty.value"><code class="name">var <span class="ident">value</span> : ~R</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 </dl>
 </dd>
-<dt id="patternlib.generator.Node"><code class="flex name class">
+<dt id="pattern_utils.generator.Node"><code class="flex name class">
 <span>class <span class="ident">Node</span></span>
 <span>(</span><span>value: T, gen: Generator[T, None, R])</span>
 </code></dt>
@@ -162,18 +162,18 @@ class Node(Generic[T, R]):
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="patternlib.generator.Node.gen"><code class="name">var <span class="ident">gen</span> : Generator[~T, None, ~R]</code></dt>
+<dt id="pattern_utils.generator.Node.gen"><code class="name">var <span class="ident">gen</span> : Generator[~T, None, ~R]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="patternlib.generator.Node.value"><code class="name">var <span class="ident">value</span> : ~T</code></dt>
+<dt id="pattern_utils.generator.Node.value"><code class="name">var <span class="ident">value</span> : ~T</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 </dl>
 <h3>Instance variables</h3>
 <dl>
-<dt id="patternlib.generator.Node.next"><code class="name">prop <span class="ident">next</span> : <a title="patternlib.generator.Node" href="#patternlib.generator.Node">Node</a>[T, R] | <a title="patternlib.generator.Empty" href="#patternlib.generator.Empty">Empty</a>[T, R]</code></dt>
+<dt id="pattern_utils.generator.Node.next"><code class="name">prop <span class="ident">next</span> : <a title="pattern_utils.generator.Node" href="#pattern_utils.generator.Node">Node</a>[T, R] | <a title="pattern_utils.generator.Empty" href="#pattern_utils.generator.Empty">Empty</a>[T, R]</code></dt>
 <dd>
 <div class="desc"><p>Get the next node in the generator.</p></div>
 <details class="source">
@@ -200,28 +200,28 @@ def next(self) -&gt; Node[T, R] | Empty[T, R]:
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="patternlib" href="index.html">patternlib</a></code></li>
+<li><code><a title="pattern_utils" href="index.html">pattern_utils</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="patternlib.generator.matcher" href="#patternlib.generator.matcher">matcher</a></code></li>
+<li><code><a title="pattern_utils.generator.matcher" href="#pattern_utils.generator.matcher">matcher</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="patternlib.generator.Empty" href="#patternlib.generator.Empty">Empty</a></code></h4>
+<h4><code><a title="pattern_utils.generator.Empty" href="#pattern_utils.generator.Empty">Empty</a></code></h4>
 <ul class="">
-<li><code><a title="patternlib.generator.Empty.value" href="#patternlib.generator.Empty.value">value</a></code></li>
+<li><code><a title="pattern_utils.generator.Empty.value" href="#pattern_utils.generator.Empty.value">value</a></code></li>
 </ul>
 </li>
 <li>
-<h4><code><a title="patternlib.generator.Node" href="#patternlib.generator.Node">Node</a></code></h4>
+<h4><code><a title="pattern_utils.generator.Node" href="#pattern_utils.generator.Node">Node</a></code></h4>
 <ul class="">
-<li><code><a title="patternlib.generator.Node.gen" href="#patternlib.generator.Node.gen">gen</a></code></li>
-<li><code><a title="patternlib.generator.Node.next" href="#patternlib.generator.Node.next">next</a></code></li>
-<li><code><a title="patternlib.generator.Node.value" href="#patternlib.generator.Node.value">value</a></code></li>
+<li><code><a title="pattern_utils.generator.Node.gen" href="#pattern_utils.generator.Node.gen">gen</a></code></li>
+<li><code><a title="pattern_utils.generator.Node.next" href="#pattern_utils.generator.Node.next">next</a></code></li>
+<li><code><a title="pattern_utils.generator.Node.value" href="#pattern_utils.generator.Node.value">value</a></code></li>
 </ul>
 </li>
 </ul>
